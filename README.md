@@ -9,6 +9,7 @@
 ```bash
 # 初回はクローンする
 git clone https://github.com/dokugaku-engineer/server-side.git
+cd server-side
 
 # 二回目以降はプルする
 git pull
