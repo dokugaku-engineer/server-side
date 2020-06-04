@@ -1,0 +1,121 @@
+# Part 2： アプリケーションの作り方
+
+## 目的
+
+* プログラムの作り方を学ぶ
+* 基礎的なPHPの使い方を学ぶ
+* アプリケーション作成の全体像を把握する
+
+## 何を作るのか
+
+読書ログサービスを作成します。
+自分が読んだ本のログを登録し、表示できるサービスです。
+
+## 要件
+
+1. 読書ログを登録できる（書籍名、著者名、読書状況、評価、感想）
+2. 読書ログを表示できる
+
+## 開発ステップ
+
+### 1. テキスト版アプリケーション (CLI で動作するアプリケーション) を作成
+
+1. 読書ログを表示できる
+2. 読書ログを登録できる
+3. メニュー化し、アプリケーションとして動作できる
+4. 複数の読書ログを登録できる
+
+### 2. アプリケーションをデータベースに対応させる
+
+1. 読書ログを保存するテーブルを作成する
+2. 読書ログをデータベースに登録できる
+3. 読書ログをデータベースから表示できる
+
+### 3. Web アプリケーション (HTMLで動作するアプリケーション) を作成
+
+1. 登録画面で読書ログを登録できる
+2. 一覧画面で読書ログを表示できる
+
+### 4. Herokuを使用してアプリケーションをWeb上に公開
+
+1. Herokuのアカウントを作成する
+2. Heroku上でアプリケーションを動作できる
+
+## 環境構築
+
+```bash
+# Docker イメージのビルド
+docker-compose build
+
+# Docker コンテナの起動
+docker-compose up -d
+
+# Docker コンテナ内でコマンドを実行する
+docker-compose exec app php -v
+
+# Docker コンテナの停止・削除
+docker-compose down
+```
+
+## Docker でよく使うコマンド
+
+```bash
+# コンテナの一覧と起動状態を確認する
+docker-compose ps
+
+# ログを確認する
+docker-compose logs app
+
+# コンテナ内で bash を操作する（コンテナ起動中のみ）
+docker-compose exec app /bin/bash
+```
+
+## Docker で困ったら
+
+### コンテナがうまく起動しないとき
+
+下記のコマンドでログを確認して、ログに合わせて対応します。
+
+```bash
+# コンテナの起動状態を確認する
+docker-compose ps
+
+# 起動していないコンテナのログを確認する
+docker-compose logs app
+docker-compose logs db
+```
+
+対応したらコンテナを起動します。
+
+```bash
+# Docker コンテナの起動
+docker-compose up -d
+
+# コンテナの起動状態を確認する
+docker-compose ps
+```
+
+Dockerfile 周りの対応を行った場合は、イメージから作り直します。
+
+```bash
+# Docker コンテナの停止・削除
+docker-compose down
+
+# Docker イメージのビルド
+docker-compose build
+
+# Docker コンテナの起動
+docker-compose up -d
+
+# コンテナの起動状態を確認する
+docker-compose ps
+```
+
+### ハードディスクの容量が逼迫したら
+
+不要なイメージ、コンテナなどを削除します。
+
+```bash
+# Docker の不要なイメージ、コンテナなどを削除する
+docker system prune
+```

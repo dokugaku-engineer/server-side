@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: docker/app/Dockerfile
+    ports:
+      - "50080:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.5.62
+    ports:
+      - "53306:3306"
+    volumes:
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./docker/db/mysql_data:/var/lib/mysql
+    env_file:
+      - ./docker/db/db-variables.env
