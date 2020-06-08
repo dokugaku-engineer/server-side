@@ -111,6 +111,28 @@ docker-compose up -d
 docker-compose ps
 ```
 
+### 上記の対応をしてもコンテナが起動しない場合
+
+Docker 関連のファイルが変更されている可能性があるので、初期の状態に戻します。
+
+```bash
+# dokugaku-engineer/server-side リポジトリをクローンする
+git clone https://github.com/dokugaku-engineer/server-side.git
+
+# part 2 のソースコードを任意のディレクトリにコピーする
+cp -r sever-side/part2 -t ~/Documents/code
+
+# part2 のディレクトリに移動します
+cd  ~/Documents/code/part2
+```
+
+Docker 関連のファイルを初期状態に戻した上で、src ディレクトリに設置していたファイルを、 ~/Documents/code/part2/src にコピーして持ってきます。
+
+### それでも起動しない場合
+
+* Docker Desktop を再起動します
+* PC を再起動します
+
 ### ハードディスクの容量が逼迫したら
 
 不要なイメージ、コンテナなどを削除します。
