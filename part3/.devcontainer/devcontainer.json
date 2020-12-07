@@ -1,0 +1,18 @@
+{
+  "name": "Part3",
+  "dockerComposeFile": [
+    "../docker-compose.yml",
+  ],
+  "service": "app",
+  "workspaceFolder": "/var/www/html",
+  "forwardPorts": [
+    9003
+  ],
+  "extensions": [
+    "felixfbecker.php-debug",
+    "bmewburn.vscode-intelephense-client",
+    "coenraads.bracket-pair-colorizer-2",
+    "oderwat.indent-rainbow",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
