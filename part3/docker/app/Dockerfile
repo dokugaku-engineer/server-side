@@ -10,7 +10,7 @@ RUN apt-get update \
     && docker-php-ext-enable xdebug
 
 # composer のインストール
-COPY --from=composer:1.10 /usr/bin/composer /usr/bin/composer
+COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
 # ファイルのコピー

@@ -4,7 +4,7 @@
     {
       "type": "php",
       "request": "launch",
-      "name": "Listen for XDebug",
+      "name": "Listen for Xdebug",
       "port": 9003,
     }
   ]
