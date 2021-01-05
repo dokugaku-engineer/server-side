@@ -5,7 +5,7 @@ WORKDIR /var/www/html
 # PHP で必要なライブラリをインストール
 RUN apt-get update \
     && apt-get install -y libonig-dev libzip-dev unzip \
-    && docker-php-ext-install mbstring zip \
+    && docker-php-ext-install mbstring zip bcmath \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug
 
