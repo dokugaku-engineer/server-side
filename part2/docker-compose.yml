@@ -13,7 +13,7 @@ services:
       - db
 
   db:
-    image: mysql:5.5.62
+    image: mysql/mysql-server:5.5.62
     ports:
       - "53306:3306"
     volumes:
