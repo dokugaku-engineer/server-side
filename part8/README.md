@@ -1,5 +1,10 @@
 # Part 8： フルスクラッチでWebアプリケーション
 
+## 目的
+
+* フルスクラッチでアプリケーションを作成する
+* Webアプリケーションの仕組みの理解を深める
+
 ## 環境構築
 
 ```bash
@@ -32,24 +37,6 @@ VSCode の Remote-Containers: Open Folder in Container からコンテナを開�
 
 ```bash
 docker-compose down
-```
-
-### テーブル作成
-
-テーブルを作成する。
-
-```bash
-docker-compose exec app php 1/initialize_employees_table.php
-```
-
-テーブルが作成できたかを確認する。
-
-```bash
-docker-compose exec db mysql -u test_user -D test_database -p
-```
-
-```sql
-SHOW TABLES;
 ```
 
 ### デバッグ (Xdebug)
