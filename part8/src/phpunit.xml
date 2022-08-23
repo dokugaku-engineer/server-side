@@ -1,0 +1,4 @@
+<phpunit colors="true"
+         verbose="true"
+         bootstrap="vendor/autoload.php">
+</phpunit>
