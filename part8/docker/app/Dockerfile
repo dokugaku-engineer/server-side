@@ -9,6 +9,9 @@ RUN apt-get update \
     && pecl install xdebug \
     && docker-php-ext-enable xdebug
 
+# mod_rewrite モジュールを使えるようにする
+RUN a2enmod rewrite
+
 # composer のインストール
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 ENV COMPOSER_ALLOW_SUPERUSER 1
